@@ -20,8 +20,6 @@ readFile.close() # Wenn man eine Datei nicht mehr im Zugriff braucht, sollte man
 
 print("Nun schreiben wir die eingelesenen Daten in eine andere Datei")
 writeFile = open("./Daten/Ausgabe_Wuerfelergebnisse.txt",mode="w") # Der mode "w" öffnet die Datei zum Schreiben. Existiert sie schon, wird der alte Inhalt gelöscht.
-n=0
-while len(umgewandelterInhalt)>n:
+for n in range(len(umgewandelterInhalt)):
     writeFile.write("Im {0:d}. Wurf war das Ergebnis {1:d}\n".format(n+1,umgewandelterInhalt[n]))
-    n=n+1
 writeFile.close()
